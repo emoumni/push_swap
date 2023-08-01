@@ -71,5 +71,4 @@ int get_next_line(int fd, char **line);
 int check_stack(t_struct **sa);
 int	stack_length(t_struct **sa, int size);
 
-
 #endif

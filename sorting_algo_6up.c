@@ -26,7 +26,7 @@ int	calculate_t_value(int v)
 	int	t;
 
 	if (v == 0)
-		t = 16;
+		t = 12;
 	if (v == 1)
 		t = 30;
 	return (t);

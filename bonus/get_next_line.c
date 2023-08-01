@@ -15,7 +15,7 @@ static char *ft_malloc_size(char **line, char *buf)
 	ret = (char *)malloc(sizeof(char) * (buf_len + line_len + 1));
 	if (!ret)
 	{
-		free(*line); // Free previously allocated *line memory before returning NULL
+		free(*line);
 		return (NULL);
 	}
 	return (ret);
@@ -130,7 +130,7 @@ int get_next_line(int fd, char **line)
 
 	if (result == 0 || result == -1)
 	{
-		free(*line); // Clean up dynamically allocated memory
+		free(*line);
 		*line = NULL;
 	}
 	

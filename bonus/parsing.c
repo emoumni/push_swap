@@ -46,7 +46,7 @@ void	length_checking(char *str)
 	error_message = "error\n";
 	if (num > 2147483647  || num < (-2147483648) || strlen(str) > 11)
 	{
-		write (2, error_message, 7);
+		write (2, error_message, 6);
 		exit(EXIT_FAILURE);
 	}
 }

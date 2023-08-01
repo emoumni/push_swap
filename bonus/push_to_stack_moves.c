@@ -22,7 +22,6 @@ void	push_to_stack_a(t_struct **stack_1, t_struct **stack_2)
 		(*stack_2)->previous = temp;
 		*stack_2 = temp;
 	}
-	write(1, "pa\n", 3);
 }
 
 void	push_to_stack_b(t_struct **stack_1, t_struct **stack_2)
@@ -47,7 +46,6 @@ void	push_to_stack_b(t_struct **stack_1, t_struct **stack_2)
 		(*stack_2)->previous = temp;
 		*stack_2 = temp;
 	}
-	write(1, "pb\n", 3);
 }
 
 void	check_the_stack(t_struct **stack)
