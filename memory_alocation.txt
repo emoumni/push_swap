@@ -1,0 +1,5 @@
+ft_split 
+ft_new _node
+ft_substr
+ft_strdup
+
