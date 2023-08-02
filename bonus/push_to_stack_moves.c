@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 void	push_to_stack_a(t_struct **stack_1, t_struct **stack_2)
 {

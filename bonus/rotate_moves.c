@@ -1,9 +1,9 @@
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 void	do_rotate_a(t_struct **stack_a)
 {
 	write (1, "ra\n", 3);
-	if (*stack_a && (*stack_a)->next)
+	if (*stack_a && (*stack_a)->next) // Check if sa and the next node exist in one condition
 	{
 		*stack_a = (*stack_a)->next;
 	}
@@ -11,7 +11,7 @@ void	do_rotate_a(t_struct **stack_a)
 
 void	do_rotate_b(t_struct **stack_b)
 {
-	if (*stack_b && (*stack_b)->next)
+	if (*stack_b && (*stack_b)->next) // Check if sa and the next node exist in one condition
 	{
 		*stack_b = (*stack_b)->next;
 		write (1, "rb\n", 3);

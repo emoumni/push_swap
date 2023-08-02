@@ -1,8 +1,8 @@
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 void	do_reverse_rotate_a(t_struct **stack_a)
 {
-	if (*stack_a && (*stack_a)->previous)
+	if (*stack_a && (*stack_a)->previous) // Check if sa and the previous node exist in one condition
 	{
 		*stack_a = (*stack_a)->previous;
 		write(1, "rra\n", 4);
@@ -11,7 +11,7 @@ void	do_reverse_rotate_a(t_struct **stack_a)
 
 void	do_reverse_rotate_b(t_struct **stack_b)
 {
-	if (*stack_b && (*stack_b)->previous)
+	if (*stack_b && (*stack_b)->previous) // Check if sa and the previous node exist in one condition
 	{
 		*stack_b = (*stack_b)->previous;
 		write(1, "rrb\n", 4);

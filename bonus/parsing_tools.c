@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 void	analyse_the_args(char *str)
 {
@@ -42,4 +42,22 @@ void	string_check(char *str, long i, long trigger)
 			error_s();
 		i++;
 	}
+}
+
+int check_stack(t_struct **sa)
+{
+	t_struct *current;
+
+	if (!(*sa))
+		return (1);
+	current = *sa;
+	while (1)
+	{
+		if (current->data->content > current->next->data->content)
+			return (1);
+		current = current->next;
+		if (current->next == *sa)
+			break;
+	}
+	return (0);
 }

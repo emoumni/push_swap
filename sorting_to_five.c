@@ -6,31 +6,32 @@ void sort_five_nb(t_struct **sa, t_struct **sb)
     *sb = NULL;
 
     if (size < 2)
+    {
         exit(1);
+    }
+
     while (size > 1 && size <= 5)
     {
         if (size == 2)
         {
             sort_two(sa);
-            break;
         }
         else if (size == 3)
         {
             sort_three(sa);
-            break;
         }
         else if (size == 4)
         {
             sort_four(sa, sb);
-            break;
         }
         else if (size == 5)
         {
             sort_five(sa, sb);
-            break;
         }
+        break;
     }
 }
+
 
 
 void sort_two(t_struct **sa)
@@ -75,21 +76,21 @@ void	sort_four(t_struct **sa, t_struct **sb)
 	t_struct	*smallest;
 	int			position;
 
-	smallest = smallest_node(sa);
-	position = node_position(smallest, sa);
+	smallest = the_litlle_node(sa);
+	position = position_no(smallest, sa);
 	if (position > 2)
-			smallest->data->mb = position - 4;
+			smallest->data->movement_b = position - 4;
 	else if (position <= 2)
-		smallest->data->mb = position;
-	while (smallest->data->mb > 0)
+		smallest->data->movement_b = position;
+	while (smallest->data->movement_b > 0)
 	{
 		do_rotate_a(sa);
-		smallest->data->mb--;
+		smallest->data->movement_b--;
 	}
-	while (smallest->data->mb < 0)
+	while (smallest->data->movement_b < 0)
 	{
 		do_reverse_rotate_a(sa);
-		smallest->data->mb++;
+		smallest->data->movement_b++;
 	}
 	push_to_stack_b(sa, sb);
 	sort_three(sa);
@@ -102,8 +103,8 @@ void sort_five(t_struct **sa, t_struct **sb)
     int position;
     int mb;
 
-    smallest = smallest_node(sa);
-    position = node_position(smallest, sa);
+    smallest = the_litlle_node(sa);
+    position = position_no(smallest, sa);
 
     if (position > 2)
         mb = position - 5;
@@ -122,7 +123,7 @@ void sort_five(t_struct **sa, t_struct **sb)
         mb++;
     }
 
-    smallest->data->mb = mb;
+    smallest->data->movement_b = mb;
 
     push_to_stack_b(sa, sb);
     sort_four(sa, sb);

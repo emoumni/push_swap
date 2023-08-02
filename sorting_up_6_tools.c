@@ -1,14 +1,14 @@
 #include "push_swap.h"
 
-void set_mb_value(t_struct *node, int position, int size)
+void    set_mb_value(t_struct *node, int position, int size)
 {
     if (position > (size / 2))
     {
-        node->data->mb = position - size;
+        node->data->movement_b = position - size;
     }
     else
     {
-        node->data->mb = position;
+        node->data->movement_b = position;
     }
 }
 
@@ -21,8 +21,8 @@ void move_largest_nodes_from_sb_to_sa(t_struct **sa, t_struct **sb)
     size = list_size(*sb);
     while (size)
     {
-        largest = largest_node(sb);
-        position = node_position(largest, sb);
+        largest = the_bigger_node(sb);
+        position = position_no(largest, sb);
 
         set_mb_value(largest, position, size);
 
@@ -33,7 +33,7 @@ void move_largest_nodes_from_sb_to_sa(t_struct **sa, t_struct **sb)
 
 void push_to_s(t_struct **sa, t_struct **sb, t_struct *largest)
 {
-    int mb = largest->data->mb;
+    int mb = largest->data->movement_b;
 
     if (mb > 0)
     {

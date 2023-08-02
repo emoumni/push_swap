@@ -1,19 +1,19 @@
 #include "push_swap.h"
 
-int args_check_issorted(t_struct **sa)
+int	args_check_issorted(t_struct **sa)
 {
-    t_struct *current;
+	t_struct	*current;
 
-    if (!(*sa))
-        return 0;
-    current = *sa;
-    while (current->next != *sa)
-    {
-        if (current->data->content > current->next->data->content)
-            return 1;
-        current = current->next;
-    }
-    return 0;
+	if (!(*sa))
+		return (0);
+	current = *sa;
+	while (current->next != *sa)
+	{
+		if (current->data->content > current->next->data->content)
+			return (1);
+		current = current->next;
+	}
+	return (0);
 }
 
 t_struct	*initialize(int ac, char **av, int *size)
@@ -35,14 +35,11 @@ void	handleSorting(int *size, t_struct **sa, t_struct **sb, int *v)
 	{
 		if (*size >= 500)
 			*v = 1;
+		if (*size >=2000)
+			*v = 2;
 		sorting(sa, sb, *v);
 		move_largest_nodes_from_sb_to_sa(sa, sb);
 	}
-}
-
-void func(void)
-{
-	system("leaks push_swap");
 }
 
 int	main(int ac, char **av)

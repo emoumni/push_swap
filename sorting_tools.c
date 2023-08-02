@@ -1,54 +1,55 @@
 #include "push_swap.h"
 
-t_struct *smallest_node(t_struct **head)
+t_struct	*the_litlle_node(t_struct **head)
 {
-	t_struct *current;
-	t_struct *smallest;
+	t_struct	*curr;
+    t_struct	*litlle;
 
-	current = *head;
-	smallest = *head;
-	while (1)
+	if (*head == NULL)
+		return (NULL); // Handle empty list case
+	curr = (*head)->next;
+	litlle = *head;
+    while (curr != *head)
 	{
-		if (current->data->content < smallest->data->content)
-			smallest = current;
-		current = current->next;
-		if (current == *head)
-			break;
+		if (curr->data->content < litlle->data->content)
+			litlle = curr;
+		curr = curr->next;
 	}
-	return smallest;
+	return (litlle);
 }
 
-int node_position(t_struct *current, t_struct **stack)
+int	position_no(t_struct *current, t_struct **stack)
 {
-	t_struct *search;
-	int i;
+	int		position;
+	t_struct	*look;
 
-	i = -1;
-	search = *stack;
-	while (1)
+	look = *stack;
+	position = 0;
+	while (look && look != current)
 	{
-		i++;
-		if (current->data->content == search->data->content)
-			break;
-		search = search->next;
+		position++;
+		look = look->next;
 	}
-	return i;
+	if (!look)
+        return (-1);
+	return (position);
 }
 
-t_struct *largest_node(t_struct **sb)
+t_struct	*the_bigger_node(t_struct **sb)
 {
-    t_struct *current;
-    t_struct *largest;
+	t_struct	*curr;
+	t_struct	*bigger;
 
-    current = *sb;
-    largest = *sb;
-    while (1)
-    {
-        if (current->data->value > largest->data->value)
-            largest = current;
-        current = current->next;
-        if (current == (*sb))
-            break;
-    }
-    return (largest);
+	if (*sb == NULL)
+		return (NULL); // Handle empty list case
+	curr = *sb;
+	bigger = *sb;
+	curr = curr->next;
+	while (curr != *sb)
+	{
+		if (curr->data->value > bigger->data->value)
+			bigger = curr;
+		curr = curr->next;
+	}
+	return (bigger);
 }
