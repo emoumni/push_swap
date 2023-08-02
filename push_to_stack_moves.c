@@ -58,14 +58,11 @@ void	check_the_stack(t_struct **stack)
 	if (!*stack || (*stack)->next == *stack)
 	{
 		*stack = NULL;
-        return;
-    }
-
-    next_node = (*stack)->next;
-    previous_node = (*stack)->previous;
-
-    previous_node->next = next_node;
-    next_node->previous = previous_node;
-
-    *stack = next_node;
+		return ;
+	}
+	next_node = (*stack)->next;
+	previous_node = (*stack)->previous;
+	previous_node->next = next_node;
+	next_node->previous = previous_node;
+	*stack = next_node;
 }

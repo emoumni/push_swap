@@ -71,7 +71,6 @@ t_struct	*minimum_value_in_list(t_struct **sa)
 			minimum = curr;
 		curr = curr->next;
 	}
-	// Check the last element outside the loop (since the loop condition checks current->next).
 	if (curr->data->value == -2 && (minimum == NULL
 		|| curr->data->content < minimum->data->content))
 		minimum = curr;

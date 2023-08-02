@@ -1,6 +1,5 @@
 #include "push_swap_bonus.h"
 
-
 static char *ft_malloc_size(char **line, char *buf)
 {
 	char *ret;

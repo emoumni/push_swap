@@ -2,10 +2,10 @@
 
 void	do_rotate_a(t_struct **stack_a)
 {
-	write (1, "ra\n", 3);
 	if (*stack_a && (*stack_a)->next)
 	{
 		*stack_a = (*stack_a)->next;
+		write (1, "ra\n", 3);
 	}
 }
 

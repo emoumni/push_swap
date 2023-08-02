@@ -21,53 +21,48 @@ void	sorting(t_struct **sa, t_struct **sb, int v)
 	move_node_to_stack_b(sa, sb, v, z);
 }
 
-int calculate_t_value(int v)
+int	calculate_t_value(int v)
 {
-    int t;
+	int	t;
 
-    if (v == 0)
-        t = 16;
-    else if (v == 1)
-        t = 30;
-    else
-        t = INT_MAX;
-
-    return t;
+	if (v == 0)
+		t = 16;
+	if (v == 1)
+		t = 30;
+	return (t);
 }
 
-void push_nodes_to_sb(t_struct **sa, t_struct **sb, int *z, int t)
+void	push_nodes_to_sb(t_struct **sa, t_struct **sb, int *z, int t)
 {
-    t_struct *current = *sa;
+    t_struct	*current;
+	int		requiredValue;
 
-    if (current->data->value <= *z)
-    {
-        push_to_stack_b(sa, sb);
-        (*z)++;
-    }
-    else
-    {
-        int requiredValue = *z + t;
-
-        if (current->data->value < requiredValue)
-        {
-            push_to_stack_b(sa, sb);
-            do_rotate_b(sb);
-            (*z)++;
-        }
-        else
-        {
-            do_rotate_a(sa);
-        }
+	current = *sa;
+	if (current->data->value <= *z)
+	{
+		push_to_stack_b(sa, sb);
+		(*z)++;
+	}
+	else
+	{
+		requiredValue = *z + t;
+		if (current->data->value < requiredValue)
+		{
+			push_to_stack_b(sa, sb);
+			do_rotate_b(sb);
+			(*z)++;
+		}
+		else
+			do_rotate_a(sa);
     }
 }
 
-void move_node_to_stack_b(t_struct **sa, t_struct **sb, int v, int z)
+void	move_node_to_stack_b(t_struct **sa, t_struct **sb, int v, int z)
 {
-    int t = calculate_t_value(v);
+	int	t;
 
-    while (*sa)
-    {
-        push_nodes_to_sb(sa, sb, &z, t);
-    }
+	t = calculate_t_value(v);
+	while (*sa)
+		push_nodes_to_sb(sa, sb, &z, t);
 }
 
