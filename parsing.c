@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emoumni <emoumni@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/02 00:34:16 by emoumni           #+#    #+#             */
+/*   Updated: 2023/08/02 00:39:23 by emoumni          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	twin_integers(t_struct **sa)
@@ -6,7 +18,7 @@ void	twin_integers(t_struct **sa)
 	t_struct	*temp;
 
 	current = *sa;
-    while (current)
+	while (current)
 	{
 		temp = current->previous;
 		while (temp)
@@ -44,10 +56,10 @@ void	length_checking(char *str)
 
 	num = my_atol(str);
 	error_message = "error\n";
-	if (num > 2147483647  || num < (-2147483648) || strlen(str) > 11)
+	if (num > 2147483647 || num < (-2147483648) || strlen(str) > 11)
 	{
 		write (2, error_message, 7);
-		exit(EXIT_FAILURE);
+		exit(1);
 	}
 }
 
@@ -74,5 +86,5 @@ void	errors_handler(int argc, char **argv, t_struct **sa)
 		}
 		memory_free(len, j);
 	}
-    twin_integers(sa);
+	twin_integers(sa);
 }

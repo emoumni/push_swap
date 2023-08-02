@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_to_stack_moves.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emoumni <emoumni@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/02 00:34:22 by emoumni           #+#    #+#             */
+/*   Updated: 2023/08/02 00:41:00 by emoumni          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	push_to_stack_a(t_struct **stack_1, t_struct **stack_2)
 {
-	t_struct *temp;
+	t_struct	*temp;
 
-    if (!*stack_1)
-		return;
+	if (!*stack_1)
+		return ;
 	temp = *stack_1;
 	check_the_stack(stack_1);
 	if (!*stack_2)
@@ -27,10 +39,10 @@ void	push_to_stack_a(t_struct **stack_1, t_struct **stack_2)
 
 void	push_to_stack_b(t_struct **stack_1, t_struct **stack_2)
 {
-	t_struct *temp;
+	t_struct	*temp;
 
 	if (!*stack_1)
-		return;
+		return ;
 	temp = *stack_1;
 	check_the_stack(stack_1);
 	if (!*stack_2)

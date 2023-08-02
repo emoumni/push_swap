@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   functions.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emoumni <emoumni@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/02 00:34:06 by emoumni           #+#    #+#             */
+/*   Updated: 2023/08/02 00:37:06 by emoumni          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 long	my_atol(const char *str)
@@ -34,11 +46,11 @@ int	ft_atoi(const char *str)
 	i = 0;
 	while (str[i] == ' ' || str[i] == '\v' || str[i] == '\t'
 		||str[i] == '\n' || str[i] == '\f' || str[i] == '\r')
-			i++;
+		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-		sign = -1;
+			sign = -1;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
@@ -69,7 +81,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	while (s[i])
 	{
 		if (i >= start && j < len)
-				str[j++] = s[i];
+			str[j++] = s[i];
 		i++;
 	}
 	str[j] = 0;

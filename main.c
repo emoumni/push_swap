@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emoumni <emoumni@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/02 00:34:08 by emoumni           #+#    #+#             */
+/*   Updated: 2023/08/02 20:42:16 by emoumni          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	args_check_issorted(t_struct **sa)
@@ -17,7 +29,7 @@ int	args_check_issorted(t_struct **sa)
 }
 
 t_struct	*initialize(int ac, char **av, int *size)
-{ 
+{
 	t_struct	*sa;
 
 	sa = NULL;
@@ -27,7 +39,7 @@ t_struct	*initialize(int ac, char **av, int *size)
 	return (sa);
 }
 
-void	handleSorting(int *size, t_struct **sa, t_struct **sb, int *v)
+void	handlesorting(int *size, t_struct **sa, t_struct **sb, int *v)
 {
 	if (*size <= 5)
 		sort_five_nb(sa, sb);
@@ -35,15 +47,19 @@ void	handleSorting(int *size, t_struct **sa, t_struct **sb, int *v)
 	{
 		if (*size >= 500)
 			*v = 1;
-		if (*size >=2000)
-			*v = 2;
 		sorting(sa, sb, *v);
 		move_largest_nodes_from_sb_to_sa(sa, sb);
 	}
 }
 
+void func(void)
+{
+	system("leaks push_swap");
+}
+
 int	main(int ac, char **av)
 {
+	atexit(func);
 	t_struct	*sa;
 	t_struct	*sb;
 	int			v;
@@ -51,9 +67,8 @@ int	main(int ac, char **av)
 
 	sa = initialize(ac, av, &size);
 	if (args_check_issorted(&sa))
-		handleSorting(&size, &sa, &sb, &v);
+		handlesorting(&size, &sa, &sb, &v);
 	if (!args_check_issorted(&sa))
 		exit(1);
 	return (0);
 }
-

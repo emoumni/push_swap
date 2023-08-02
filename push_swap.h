@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emoumni <emoumni@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/02 00:34:19 by emoumni           #+#    #+#             */
+/*   Updated: 2023/08/02 20:00:52 by emoumni          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -10,17 +22,17 @@
 
 typedef struct s_data
 {
-	int content;
-	int value;
-	int movement_b;
-} t_data;
+	int	content;
+	int	value;
+	int	movement_b;
+}	t_data;
 
 typedef struct s_list
 {
-	struct s_list *previous;
-	struct s_data *data;
-	struct s_list *next;
-} t_struct;
+	struct s_list	*previous;
+	struct s_data	*data;
+	struct s_list	*next;
+}	t_struct;
 
 //parsing
 
@@ -83,7 +95,7 @@ t_struct	*minimum_value_in_list(t_struct **sa);
 void		sorting(t_struct **sa, t_struct **sb, int v);
 void		push_to_s(t_struct **sa, t_struct **sb, t_struct *largest);
 t_struct	*initialize(int ac, char **av, int *size);
-void		handleSorting(int *size, t_struct **sa, t_struct **sb, int *v);
+void		handlesorting(int *size, t_struct **sa, t_struct **sb, int *v);
 void		do_actions_according_to_mb(t_struct **sb, t_struct *largest);
 void		set_mb_value(t_struct *node, int position, int size);
 void		push_nodes_to_sb(t_struct **sa, t_struct **sb, int *z, int t);

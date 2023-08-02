@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   reverse_rotate_moves.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emoumni <emoumni@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/02 00:34:25 by emoumni           #+#    #+#             */
+/*   Updated: 2023/08/02 00:41:41 by emoumni          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	do_reverse_rotate_a(t_struct **stack_a)
@@ -37,12 +49,9 @@ size_t	ft_strlen(const char *s)
 
 int	ft_isspace(int c)
 {
-	if (c == ' ' || c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r')
-	{
+	if (c == ' ' || c == '\t' || c == '\n' || 
+		c == '\v' || c == '\f' || c == '\r')
 		return (1);
-	}
 	else
-	{
-		return 0;
-	}
+		return (0);
 }

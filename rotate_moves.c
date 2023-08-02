@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate_moves.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emoumni <emoumni@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/02 00:34:28 by emoumni           #+#    #+#             */
+/*   Updated: 2023/08/02 00:41:57 by emoumni          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	do_rotate_a(t_struct **stack_a)
@@ -27,7 +39,7 @@ void	do_rotate_both_a_b(t_struct **stack_a, t_struct **stack_b)
 
 void	error_s(void)
 {
-    const char	*error_message;
+	const char	*error_message;
 
 	error_message = "Error\n";
 	write (2, error_message, 7);

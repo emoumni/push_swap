@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sorting_algo_6up.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emoumni <emoumni@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/02 00:34:32 by emoumni           #+#    #+#             */
+/*   Updated: 2023/08/02 20:41:57 by emoumni          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	sorting(t_struct **sa, t_struct **sb, int v)
@@ -26,7 +38,7 @@ int	calculate_t_value(int v)
 	int	t;
 
 	if (v == 0)
-		t = 12;
+		t = 10;
 	if (v == 1)
 		t = 30;
 	return (t);
@@ -34,8 +46,8 @@ int	calculate_t_value(int v)
 
 void	push_nodes_to_sb(t_struct **sa, t_struct **sb, int *z, int t)
 {
-    t_struct	*current;
-	int		requiredValue;
+	t_struct	*current;
+	int			requiredvalue;
 
 	current = *sa;
 	if (current->data->value <= *z)
@@ -45,8 +57,8 @@ void	push_nodes_to_sb(t_struct **sa, t_struct **sb, int *z, int t)
 	}
 	else
 	{
-		requiredValue = *z + t;
-		if (current->data->value < requiredValue)
+		requiredvalue = *z + t;
+		if (current->data->value < requiredvalue)
 		{
 			push_to_stack_b(sa, sb);
 			do_rotate_b(sb);
@@ -54,7 +66,7 @@ void	push_nodes_to_sb(t_struct **sa, t_struct **sb, int *z, int t)
 		}
 		else
 			do_rotate_a(sa);
-    }
+	}
 }
 
 void	move_node_to_stack_b(t_struct **sa, t_struct **sb, int v, int z)
@@ -65,4 +77,3 @@ void	move_node_to_stack_b(t_struct **sa, t_struct **sb, int v, int z)
 	while (*sa)
 		push_nodes_to_sb(sa, sb, &z, t);
 }
-
